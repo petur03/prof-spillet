@@ -1,16 +1,16 @@
 # prof-spillet
 Professor Spillet
 
-Run with:
+Run with:<br>
 $ ruby prof.rb
 
-Configuration of pieces can be seen in pieces.rb
-:blp = blue pants
-:brh = brown head
+Configuration of pieces can be seen in pieces.rb<br>
+:blp = blue pants<br>
+:brh = brown head<br>
 etc..
 
-Output is <piece index(<rotation>)
-e.g.:
-3(2)
-means piece with id 3, rotated twice counter-clockwise.
+Output is \<piece index\>(\<rotation\>)<br>
+e.g.:<br>
+3(2)<br>
+means piece with id 3, rotated twice counter-clockwise.<br>
 
