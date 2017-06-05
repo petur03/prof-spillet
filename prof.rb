@@ -8,17 +8,17 @@ pieces = Piece.init
 
 board = Array.new
 
-@@total = 0
+$total = 0
 
 
 def place board, pieces
   if pieces.empty?
 #puts "Done"
-    puts "Solution: " + @@total.to_s
+    puts "Solution: " + $total.to_s
     printBoard board
     puts 
     puts 
-    @@total = @@total+1
+    $total = $total+1
 #exit(0)
   end
   pieces.each do |p|
