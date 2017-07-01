@@ -6,6 +6,9 @@ NUM_PIECES = 16
 
 pieces = Piece.init
 
+# Piece 5 and 15 are equal
+$p15 = pieces.pop # remove piece 15 to avoid duplicate solutions
+
 board = Array.new
 
 $total = 0
@@ -21,18 +24,29 @@ def place board, pieces
     $total = $total+1
 #exit(0)
   end
-  pieces.each do |p|
-    4.times do |i|
+  pieces.each_with_index do |p, i|
+
+    # This is to avoid duplicate slutions from rotated board
+    if board.length == 3 || board.length == 12 || board.length == 15
+      if p.id < board[0].id
+        next
+      end
+    end
+
+    4.times do
       if check(board, p)
-        if board.length >10
-#puts "Placing... " + board.length.to_s
-        end
-        new_b = board.clone
-        new_b << p
 #printBoard new_b
-        new_p = pieces.clone
-        new_p.delete(p)
-        place(new_b, new_p)
+        board << p
+        del = pieces.delete_at(i)
+        if (p.id ==5)
+          pieces << $p15
+        end
+        place(board, pieces)
+        if (p.id ==5)
+          top = pieces.pop
+        end
+        pieces.insert(i, p)
+        board.pop
       end
 #puts "Rotating"
       p.rotate
