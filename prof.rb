@@ -31,6 +31,12 @@ def place board, pieces
       if p.id < board[0].id
         next
       end
+      begin
+        if p.id == 15 && (board.length == 15 || (board[3].id == 5 || board[12].id == 5))
+          next
+        end
+      rescue
+      end
     end
 
     4.times do
