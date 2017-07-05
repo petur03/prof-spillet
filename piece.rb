@@ -37,7 +37,7 @@ class Piece
   def Piece.init
     pieces = Array.new
 
-    pieces << Piece.new(:blh, :brp, :prp, :grh, 0)
+    pieces << Piece.new(:prp, :grh, :brh, :brp, 0)
     pieces << Piece.new(:prh, :grp, :blp, :brh, 1)
     pieces << Piece.new(:blh, :blp, :brp, :brh, 2)
     pieces << Piece.new(:blh, :brh, :grp, :prp, 3)
@@ -55,7 +55,7 @@ class Piece
     pieces << Piece.new(:brp, :prh, :blh, :grp, 12)
     pieces << Piece.new(:blp, :prh, :grh, :brp, 13)
     pieces << Piece.new(:prh, :brp, :grp, :grh, 14)
-    pieces << Piece.new(:prp, :grh, :brh, :brp, 15)
+    pieces << Piece.new(:prp, :grh, :blh, :brp, 15)
     return pieces
   end
 end
